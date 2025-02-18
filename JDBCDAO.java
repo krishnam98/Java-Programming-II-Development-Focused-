@@ -110,16 +110,22 @@ public class JDBCDAO{
 
         }
 
+        // Function to delete a student
         public static void deleteStudent (int rollNo){
             try{
 
+                // Creating a DELETE Query
                 String query="DELETE FROM student WHERE RollNo="+rollNo;
                 Statement st= con.createStatement();
+
+                // Executing Query
                 st.executeUpdate(query);
 
+                // Closing Resources
                 st.close();
                 con.close();
 
+                // Printing Success Message
                 System.out.println("Student Data deleted Successfully....!");
             }
             catch(Exception e){
@@ -140,9 +146,6 @@ public class JDBCDAO{
     }
 
 
-
-
-
     public static void main(String args[]){
 
         // Creating Data Access Object of student
@@ -156,13 +159,14 @@ public class JDBCDAO{
         // System.out.println(s.name+" "+s.age);
 
         // Adding a Student 
-        Student s=new Student();
-        s.rollNo=8;
-        s.name="Abhinav";
-        s.age=22;
-        ;
-        dao.addStudent(s);
+        // Student s=new Student();
+        // s.rollNo=8;
+        // s.name="Abhinav";
+        // s.age=22;
+        // ;
+        // dao.addStudent(s);
 
+        // Deleting a Student
         // dao.deleteStudent(8);
 
     }
