@@ -110,6 +110,26 @@ public class JDBCDAO{
 
         }
 
+        public static void deleteStudent (int rollNo){
+            try{
+
+                String query="DELETE FROM student WHERE RollNo="+rollNo;
+                Statement st= con.createStatement();
+                st.executeUpdate(query);
+
+                st.close();
+                con.close();
+
+                System.out.println("Student Data deleted Successfully....!");
+            }
+            catch(Exception e){
+                System.out.println("Error in Deleting Student data");
+                System.out.println(e);
+            }
+           
+
+        }
+
     }
 
     // student class encapsulating rollNo, name, age;
@@ -142,6 +162,8 @@ public class JDBCDAO{
         s.age=22;
         ;
         dao.addStudent(s);
+
+        // dao.deleteStudent(8);
 
     }
 }
