@@ -27,7 +27,7 @@ public class Main {
 
         Transaction transaction= session.beginTransaction();
 //      Saving the Student
-//       session.persist(s1);
+       session.persist(s1);
 
 //       Updating the student
 //        session.merge(s1);

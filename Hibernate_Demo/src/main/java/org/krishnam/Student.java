@@ -1,12 +1,18 @@
 package org.krishnam;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table (name = "Student_data")
 public class Student {
+
     @Id
+    @Column(name = "s_rollNo")
     private int rollNo;
+    @Column(name = "s_name")
     private String name;
     private int age;
 
