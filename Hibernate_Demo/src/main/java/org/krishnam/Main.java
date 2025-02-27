@@ -10,14 +10,33 @@ import org.hibernate.cfg.Configuration;
 public class Main {
     public static void main(String[] args) {
 
-        Student s1=new Student();
+//        USING STUDENT AS TABLE
+//        Student s1=new Student();
 
-        s1.setRollNo(13);
-        s1.setName("Abhinav");
-        s1.setAge(23);
+//        s1.setRollNo(13);
+//        s1.setName("Abhinav");
+//        s1.setAge(23);
+
+//        USING RECORD
+        Record r1 =new Record();
+
+        StudentName s=new StudentName();
+        s.setfName("Krishnam");
+        s.setmName("Sushil");
+        s.setlName("Soni");
+
+        r1.setRollno(1);
+        r1.setName(s);
+        r1.setAge(22);
 
         Configuration config=new Configuration();
-        config.addAnnotatedClass(org.krishnam.Student.class);
+
+//        When Working with student Table use this Class
+//        config.addAnnotatedClass(org.krishnam.Student.class);
+
+//       When Working with record Table use this class
+        config.addAnnotatedClass(org.krishnam.Record.class);
+
         config.configure();
 
         SessionFactory factory=config.buildSessionFactory();
@@ -27,7 +46,10 @@ public class Main {
 
         Transaction transaction= session.beginTransaction();
 //      Saving the Student
-       session.persist(s1);
+//       session.persist(s1);
+
+//        Saving Record
+        session.persist(r1);
 
 //       Updating the student
 //        session.merge(s1);
