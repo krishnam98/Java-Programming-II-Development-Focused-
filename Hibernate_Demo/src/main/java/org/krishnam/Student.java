@@ -2,6 +2,7 @@ package org.krishnam;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 
 @Entity
@@ -11,6 +12,11 @@ public class Student {
     private int rollNo;
     private String name;
     private int age;
+
+//    Creating ONE TO ONE relation with laptop class
+
+    @OneToOne
+    private Laptop laptop;
 
     public String getName() {
         return name;
@@ -34,6 +40,14 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
     }
 
     @Override

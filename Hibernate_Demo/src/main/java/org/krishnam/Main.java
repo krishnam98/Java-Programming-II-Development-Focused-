@@ -37,10 +37,13 @@ public class Main {
         s.setName("Krishnam");
         s.setAge(22);
 
+
         Student s2= new Student();
         s2.setRollNo(2);
         s2.setName("Pranay");
         s2.setAge(22);
+
+
 
 //        Setting up laptop database
         Laptop l1=new Laptop();
@@ -56,9 +59,9 @@ public class Main {
         l3.setLname("macbook");
 
 
-
-
-
+//        Setting Laptop Student
+        s.setLaptop(l1);
+        s2.setLaptop(l3);
 
 
         Configuration config=new Configuration();
@@ -82,10 +85,10 @@ public class Main {
 
         Transaction transaction= session.beginTransaction();
 //      Saving the Student
-//       session.persist(s);
-//       session.persist(s2);
+       session.persist(s);
+       session.persist(s2);
 
-        //      Saving the Laptop
+//      Saving the Laptop
 //       session.persist(l1);
 //       session.persist(l2);
 //       session.persist(l3);
