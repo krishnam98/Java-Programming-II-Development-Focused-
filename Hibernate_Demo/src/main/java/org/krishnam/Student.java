@@ -2,7 +2,11 @@ package org.krishnam;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -14,9 +18,15 @@ public class Student {
     private int age;
 
 //    Creating ONE TO ONE relation with laptop class
+//    @OneToOne
+//    private Laptop laptop;
 
-    @OneToOne
-    private Laptop laptop;
+//    Creations ONE TO MANY relation with laptop class
+
+    @OneToMany
+    private List<Laptop> laptops=new ArrayList<>();
+
+
 
     public String getName() {
         return name;
@@ -42,13 +52,21 @@ public class Student {
         this.age = age;
     }
 
-    public Laptop getLaptop() {
-        return laptop;
+    public List<Laptop> getLaptops() {
+        return laptops;
     }
 
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+    public void setLaptops(List<Laptop> laptops) {
+        this.laptops = laptops;
     }
+
+    //    public Laptop getLaptop() {
+//        return laptop;
+//    }
+//
+//    public void setLaptop(Laptop laptop) {
+//        this.laptop = laptop;
+//    }
 
     @Override
     public String toString() {

@@ -59,9 +59,14 @@ public class Main {
         l3.setLname("macbook");
 
 
-//        Setting Laptop Student
-        s.setLaptop(l1);
-        s2.setLaptop(l3);
+//        Setting Laptop for Student
+//        s.setLaptop(l1);
+//        s2.setLaptop(l3);
+
+//        Setting list of Laptops for Student
+        s.getLaptops().add(l1);
+        s.getLaptops().add(l2);
+        s2.getLaptops().add(l3);
 
 
         Configuration config=new Configuration();
