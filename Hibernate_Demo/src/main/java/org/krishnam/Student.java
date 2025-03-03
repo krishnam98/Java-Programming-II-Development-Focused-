@@ -23,10 +23,8 @@ public class Student {
 
 //    Creations ONE TO MANY relation with laptop class
 
-    @OneToMany
+    @OneToMany (mappedBy = "stud")
     private List<Laptop> laptops=new ArrayList<>();
-
-
 
     public String getName() {
         return name;

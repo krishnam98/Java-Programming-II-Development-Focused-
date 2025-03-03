@@ -49,17 +49,20 @@ public class Main {
         Laptop l1=new Laptop();
         l1.setLid(101);
         l1.setLname("hp");
+        l1.setStud(s);
 
         Laptop l2=new Laptop();
         l2.setLid(102);
         l2.setLname("dell");
+        l2.setStud(s);
 
         Laptop l3=new Laptop();
         l3.setLid(103);
         l3.setLname("macbook");
+        l3.setStud(s2);
 
 
-//        Setting Laptop for Student
+//        Setting 1 Laptop for Student
 //        s.setLaptop(l1);
 //        s2.setLaptop(l3);
 
@@ -94,9 +97,9 @@ public class Main {
        session.persist(s2);
 
 //      Saving the Laptop
-//       session.persist(l1);
-//       session.persist(l2);
-//       session.persist(l3);
+       session.persist(l1);
+       session.persist(l2);
+       session.persist(l3);
 
 
 //        Saving Record
