@@ -49,17 +49,18 @@ public class Main {
         Laptop l1=new Laptop();
         l1.setLid(101);
         l1.setLname("hp");
-        l1.setStud(s);
+        l1.getStuds().add(s);
 
         Laptop l2=new Laptop();
         l2.setLid(102);
         l2.setLname("dell");
-        l2.setStud(s);
+        l2.getStuds().add(s);
 
         Laptop l3=new Laptop();
         l3.setLid(103);
         l3.setLname("macbook");
-        l3.setStud(s2);
+        l3.getStuds().add(s2);
+        l3.getStuds().add(s);
 
 
 //        Setting 1 Laptop for Student
@@ -69,6 +70,7 @@ public class Main {
 //        Setting list of Laptops for Student
         s.getLaptops().add(l1);
         s.getLaptops().add(l2);
+        s.getLaptops().add(l3);
         s2.getLaptops().add(l3);
 
 

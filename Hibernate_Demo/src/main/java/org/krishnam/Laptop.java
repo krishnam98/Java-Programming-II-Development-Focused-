@@ -2,6 +2,7 @@ package org.krishnam;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
 import java.util.ArrayList;
@@ -13,8 +14,8 @@ public class Laptop {
     private int lid;
     private String lname;
 
-    @ManyToOne
-    private Student stud;
+    @ManyToMany
+    private List<Student> studs=new ArrayList<>();
 
     public int getLid() {
         return lid;
@@ -33,11 +34,11 @@ public class Laptop {
     }
 
 
-    public Student getStud() {
-        return stud;
+    public List<Student> getStuds() {
+        return studs;
     }
 
-    public void setStud(Student stud) {
-        this.stud = stud;
+    public void setStuds(List<Student> studs) {
+        this.studs = studs;
     }
 }
