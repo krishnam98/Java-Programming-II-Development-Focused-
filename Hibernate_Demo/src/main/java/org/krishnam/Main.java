@@ -32,35 +32,35 @@ public class Main {
 
 //        Studying Mapping Relations in Hibernate
 //        Setting up student database
-        Student s= new Student();
-        s.setRollNo(1);
-        s.setName("Krishnam");
-        s.setAge(22);
-
-
-        Student s2= new Student();
-        s2.setRollNo(2);
-        s2.setName("Pranay");
-        s2.setAge(22);
+//        Student s= new Student();
+//        s.setRollNo(1);
+//        s.setName("Krishnam");
+//        s.setAge(22);
+//
+//
+//        Student s2= new Student();
+//        s2.setRollNo(2);
+//        s2.setName("Pranay");
+//        s2.setAge(22);
 
 
 
 //        Setting up laptop database
-        Laptop l1=new Laptop();
-        l1.setLid(101);
-        l1.setLname("hp");
-        l1.getStuds().add(s);
-
-        Laptop l2=new Laptop();
-        l2.setLid(102);
-        l2.setLname("dell");
-        l2.getStuds().add(s);
-
-        Laptop l3=new Laptop();
-        l3.setLid(103);
-        l3.setLname("macbook");
-        l3.getStuds().add(s2);
-        l3.getStuds().add(s);
+//        Laptop l1=new Laptop();
+//        l1.setLid(101);
+//        l1.setLname("hp");
+//        l1.getStuds().add(s);
+//
+//        Laptop l2=new Laptop();
+//        l2.setLid(102);
+//        l2.setLname("dell");
+//        l2.getStuds().add(s);
+//
+//        Laptop l3=new Laptop();
+//        l3.setLid(103);
+//        l3.setLname("macbook");
+//        l3.getStuds().add(s2);
+//        l3.getStuds().add(s);
 
 
 //        Setting 1 Laptop for Student
@@ -68,10 +68,10 @@ public class Main {
 //        s2.setLaptop(l3);
 
 //        Setting list of Laptops for Student
-        s.getLaptops().add(l1);
-        s.getLaptops().add(l2);
-        s.getLaptops().add(l3);
-        s2.getLaptops().add(l3);
+//        s.getLaptops().add(l1);
+//        s.getLaptops().add(l2);
+//        s.getLaptops().add(l3);
+//        s2.getLaptops().add(l3);
 
 
         Configuration config=new Configuration();
@@ -80,7 +80,7 @@ public class Main {
         config.addAnnotatedClass(org.krishnam.Student.class);
 
 //        Laptop Table
-        config.addAnnotatedClass(org.krishnam.Laptop.class);
+//        config.addAnnotatedClass(org.krishnam.Laptop.class);
 
 
 //       When Working with record Table use this class
@@ -95,13 +95,13 @@ public class Main {
 
         Transaction transaction= session.beginTransaction();
 //      Saving the Student
-       session.persist(s);
-       session.persist(s2);
+//       session.persist(s);
+//       session.persist(s2);
 
 //      Saving the Laptop
-       session.persist(l1);
-       session.persist(l2);
-       session.persist(l3);
+//       session.persist(l1);
+//       session.persist(l2);
+//       session.persist(l3);
 
 
 //        Saving Record

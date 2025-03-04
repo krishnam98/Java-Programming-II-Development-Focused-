@@ -14,8 +14,8 @@ public class Laptop {
     private int lid;
     private String lname;
 
-    @ManyToMany
-    private List<Student> studs=new ArrayList<>();
+//    @ManyToMany
+//    private List<Student> studs=new ArrayList<>();
 
     public int getLid() {
         return lid;
@@ -34,11 +34,11 @@ public class Laptop {
     }
 
 
-    public List<Student> getStuds() {
-        return studs;
-    }
-
-    public void setStuds(List<Student> studs) {
-        this.studs = studs;
-    }
+//    public List<Student> getStuds() {
+//        return studs;
+//    }
+//
+//    public void setStuds(List<Student> studs) {
+//        this.studs = studs;
+//    }
 }

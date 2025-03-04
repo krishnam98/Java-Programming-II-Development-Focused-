@@ -21,10 +21,9 @@ public class Student {
 //    @OneToOne
 //    private Laptop laptop;
 
-//    Creations ONE TO MANY relation with laptop class
-
-    @OneToMany (mappedBy = "studs")
-    private List<Laptop> laptops=new ArrayList<>();
+//    Creations ONE TO MANY & MANY TO MANY relation with laptop class
+//    @OneToMany (mappedBy = "studs")
+//    private List<Laptop> laptops=new ArrayList<>();
 
     public String getName() {
         return name;
@@ -50,13 +49,13 @@ public class Student {
         this.age = age;
     }
 
-    public List<Laptop> getLaptops() {
-        return laptops;
-    }
-
-    public void setLaptops(List<Laptop> laptops) {
-        this.laptops = laptops;
-    }
+//    public List<Laptop> getLaptops() {
+//        return laptops;
+//    }
+//
+//    public void setLaptops(List<Laptop> laptops) {
+//        this.laptops = laptops;
+//    }
 
     //    public Laptop getLaptop() {
 //        return laptop;
