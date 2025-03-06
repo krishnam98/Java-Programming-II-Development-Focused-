@@ -6,7 +6,6 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateCaching {
     public static void main(String args[]){
-        System.out.println(",,");
 
         Configuration config= new Configuration();
         config.addAnnotatedClass(org.krishnam.Student.class);
