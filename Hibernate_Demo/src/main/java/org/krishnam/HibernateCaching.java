@@ -41,5 +41,9 @@ public class HibernateCaching {
        */
         Student s2 =session2.find(Student.class,1);
         System.out.println(s2);
+
+        session2.close();
+
+
     }
 }
