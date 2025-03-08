@@ -1,0 +1,26 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="dev" class="org.example.Dev" autowire="byType">
+    <!--  Setter Injection in Spring-->
+<!--        <property name="age" value="12"/>-->
+
+    <!--        Constructor Injection in Spring-->
+<!--            <constructor-arg value="12"/>-->
+
+
+<!-- Setter and Constructor Injection for Objects -->
+<!--        <property name="laptop" ref="laptop1"/>-->
+<!--        <constructor-arg ref="laptop1"/>-->
+<!--        <property name="comp" ref="desk1"/>-->
+    </bean>
+<!--Laptop Bean-->
+    <bean id="comp" class="org.example.Laptop" ></bean>
+<!--   Desktop Bean-->
+    <bean id="desk1" class="org.example.Desktop" primary="true"></bean>
+
+</beans>
