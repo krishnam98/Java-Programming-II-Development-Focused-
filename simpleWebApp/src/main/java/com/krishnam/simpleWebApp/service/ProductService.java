@@ -28,5 +28,30 @@ public class ProductService {
 
     }
 
+    private int getIndex(int id){
+        for(int i=0;i<productList.size();i++){
+            if(productList.get(i).getProduct_id()==id){
+                return i;
+            }
+        }
 
+        return -1;
+    }
+
+    public void updateProduct(Products product) {
+        int idx=getIndex(product.getProduct_id());
+        if(idx!=-1){
+            productList.set(idx,product);
+
+        }
+
+
+    }
+
+    public void deleteProduct(int prodId) {
+        int idx=getIndex(prodId);
+        if(idx!=-1){
+            productList.remove(idx);
+        }
+    }
 }
