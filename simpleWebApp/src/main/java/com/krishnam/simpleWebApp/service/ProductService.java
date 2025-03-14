@@ -1,6 +1,8 @@
 package com.krishnam.simpleWebApp.service;
 
+import com.krishnam.simpleWebApp.Repository.ProductRepo;
 import com.krishnam.simpleWebApp.model.Products;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,49 +11,33 @@ import java.util.List;
 
 @Service
 public class ProductService {
-    List <Products> productList= new ArrayList<>(Arrays.asList(new Products(101,"hp", 50000),
-                                               new Products(102,"dell",60000),
-                                               new Products(103,"Macbook",90000)));
+//    List <Products> productList= new ArrayList<>(Arrays.asList(new Products(101,"hp", 50000),
+//                                               new Products(102,"dell",60000),
+//                                               new Products(103,"Macbook",90000)));
 
+    @Autowired
+    ProductRepo repo;
     public List<Products> getProduct(){
-        return productList;
+        return repo.findAll();
 
     }
 
     public Products getProductByid(int prodId){
-        return productList.stream().filter(p -> p.getProduct_id()==prodId).findFirst().get();
+        return repo.findById(prodId).orElse(new Products());
     }
 
     public void addProduct(Products product){
 
-        productList.add((product));
+        repo.save(product);
 
-    }
-
-    private int getIndex(int id){
-        for(int i=0;i<productList.size();i++){
-            if(productList.get(i).getProduct_id()==id){
-                return i;
-            }
-        }
-
-        return -1;
     }
 
     public void updateProduct(Products product) {
-        int idx=getIndex(product.getProduct_id());
-        if(idx!=-1){
-            productList.set(idx,product);
-
-        }
-
+        repo.save(product);
 
     }
 
     public void deleteProduct(int prodId) {
-        int idx=getIndex(prodId);
-        if(idx!=-1){
-            productList.remove(idx);
-        }
+        repo.deleteById(prodId);
     }
 }

@@ -1,9 +1,13 @@
 package com.krishnam.simpleWebApp.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import org.springframework.stereotype.Component;
 
 @Component
+@Entity
 public class Products {
+    @Id
    private int product_id;
    private String product_name;
    private int produce_price;
